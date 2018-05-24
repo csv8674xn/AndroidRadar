@@ -32,7 +32,7 @@ import java.util.Locale;
  */
 final class RadarWebView implements Radar {
 
-    static final String RADAR_HOST = "radar.cedexis.com";
+    static final String RADAR_HOST = "radar.wildlemur.com";
     private static final String TAG = RadarWebView.class.getSimpleName();
     private WebView webView;
 
@@ -82,6 +82,8 @@ final class RadarWebView implements Radar {
             webView.setWebViewClient(createOrGetWebClient(zoneId, customerId));
             String url = String.format(Locale.getDefault(),
                     "%s://%s/0/0/radar.html", scheme.toString(), RADAR_HOST);
+//            url = String.format(Locale.getDefault(),
+//                    "%s://%s/0/0/radar.html?v=1522863840", scheme.toString(), RADAR_HOST);
             Log.d(TAG, String.format("Radar URL: %s", url));
             webView.loadUrl(url);
         }
