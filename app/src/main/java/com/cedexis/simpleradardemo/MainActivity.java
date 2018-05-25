@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button radarButton;
     private int requestorZoneId = 1;
-    private int requestorCustomerId = 55343;
+    private int requestorCustomerId = 11326;
     private Cedexis cedexis;
 
     @Override
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         radarButton = (Button) findViewById(R.id.radar_button);
         radarButton.setOnClickListener(this);
 
-//        long l = System.currentTimeMillis();
-//        cedexis = Cedexis.init(this);
-//        Log.d("INIT WITH ACTIVITY", "Time: " + (System.currentTimeMillis() - l));
-
         long l = System.currentTimeMillis();
-        cedexis = Cedexis.init((WebView) findViewById(R.id.webview));
-        Log.d("INIT WITH WEBVIEW", "Time: " + (System.currentTimeMillis() - l));
+        cedexis = Cedexis.init(this);
+        Log.d("INIT WITH ACTIVITY", "Time: " + (System.currentTimeMillis() - l));
+
+//        long l = System.currentTimeMillis();
+//        cedexis = Cedexis.init((WebView) findViewById(R.id.webview));
+//        Log.d("INIT WITH WEBVIEW", "Time: " + (System.currentTimeMillis() - l));
 //
 //        long l = System.currentTimeMillis();
 //        cedexis = Cedexis.init((ViewGroup) findViewById(R.id.content));
